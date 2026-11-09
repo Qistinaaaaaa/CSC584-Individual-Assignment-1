@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSC584 - Personal Profile Assignment</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h2 {
+            color: #2c3e50;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #34495e;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group label i {
+            color: #3498db;
+            margin-right: 6px;
+        }
+
+        .input-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            outline: none;
+            background: #f8fafc;
+        }
+
+        .input-control:focus {
+            border-color: #3498db;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+        }
+
+        textarea.input-control {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            border: none;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2><i class="fa-solid fa-id-card" style="color: #3498db;"></i> Personal Profile Form</h2>
+            <p>CSC584 Enterprise Programming - Individual Assignment 1</p>
+        </div>
+
+        <!-- Form submitting data via HTTP POST to ProfileServlet -->
+        <form action="ProfileServlet" method="post">
+            
+            <div class="form-group">
+                <label for="name"><i class="fa-solid fa-user"></i> Full Name</label>
+                <input type="text" id="name" name="name" class="input-control" placeholder="e.g. Muhammad Alif bin Ahmad" pattern="[A-Za-z\s]+" title="Please enter letters only (no numbers)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="studentId"><i class="fa-solid fa-id-badge"></i> Student ID</label>
+                <input type="text" id="studentId" name="studentId" class="input-control" placeholder="e.g. 2026123456" pattern="[0-9]+" title="Please enter numbers only (no letters)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="programme"><i class="fa-solid fa-graduation-cap"></i> Programme Code</label>
+                <input type="text" id="programme" name="programme" class="input-control" placeholder="e.g. CS240 / CDCS230" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                <input type="email" id="email" name="email" class="input-control" placeholder="e.g. 2026123456@student.uitm.edu.my" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hobbies"><i class="fa-solid fa-heart"></i> Hobbies</label>
+                <input type="text" id="hobbies" name="hobbies" class="input-control" placeholder="e.g. Coding, Reading, Gaming, Football" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bio"><i class="fa-solid fa-pen-nib"></i> Short Self-Introduction</label>
+                <textarea id="bio" name="bio" class="input-control" placeholder="Write a brief introduction about yourself..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <i class="fa-solid fa-paper-plane"></i> Submit Profile
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>
