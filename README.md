@@ -14,7 +14,23 @@ A simple dynamic web application built using HTML, Java Servlet, and JavaServer 
 * **JDK 1.8** and **NetBeans IDE 8.2**
 
 ## Application Flow
-`index.html` (Form) -> `ProfileServlet` (POST) -> `profile.jsp` (Display)
+`index.html` (Form) → `ProfileServlet` (POST) → `profile.jsp` (Display)
+
+## Project Structure
+```
+CSC584-Individual-Assignment-1/
+├── PersonalProfileApp/
+│   ├── src/java/
+│   │   └── ProfileServlet.java    # Servlet: receives POST data and forwards to JSP
+│   ├── web/
+│   │   ├── index.html             # Profile form (HTML + CSS)
+│   │   ├── profile.jsp            # Displays the submitted profile (JSP + CSS)
+│   │   └── WEB-INF/
+│   ├── nbproject/                 # NetBeans project configuration
+│   └── build.xml                  # Ant build file
+├── screenshots/                   # Screenshots of the application output
+└── README.md
+```
 
 ## Prerequisites
 * JDK 1.8
